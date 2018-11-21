@@ -1,0 +1,35 @@
+<h1>
+ BH
+</h1>
+<div class="center-block">
+  <button (click)="findSalarieByCriteria('FIRSTNAME')" type="button" class="btn btn-primary">By
+    FirstName
+  </button>
+  <button (click)="findSalarieByCriteria('LASTNAME')" type="button" class="btn btn-success">By
+    LastName
+  </button>
+  <button (click)="findSalarieByCriteria('COUNTRY')" type="button" class="btn btn-danger">By
+    Country
+  </button>
+</div>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>FirstName</th>
+    <th>LastName</th>
+    <th>Country</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let salarie of salaries; let i=index">
+    <td>{{salarie?.id}}</td>
+    <td>{{salarie?.firstName}}</td>
+    <td>{{salarie?.lastName}}</td>
+    <td>{{salarie?.country}}</td>
+  </tr>
+  </tbody>
+  <div class="error" *ngIf="fail != null ">
+    {{fail}}
+  </div>
+</table>
